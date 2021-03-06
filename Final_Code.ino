@@ -29,17 +29,10 @@ void enque(int item)
     {
         rear=-1;
     }
-    if(front==-1 && rear==-1)
-    {
-        rear++;
-        floor[rear]=item;
+  
+    floor[rear]=item;
 
-    }
-    else{
-        rear++;
-        floor[rear]=item;
-
-    }
+    
 }
 
 // to remove the floor already reached
@@ -49,8 +42,8 @@ void deque()
     {
         front=-1;
     }
+    floor++;
     floor[front]=0;
-    front++;
 }
 // loop
 void loop()
@@ -68,28 +61,28 @@ void loop()
         a=2;
         if(check(a))
         {
-            enque(1);
+            enque(2);
         }
     }
     else if (digitalRead(4)==HIGH){     // taking inputs from pin no. 4
        a=3;
         if(check(a))
         {
-            enque(1);
+            enque(3);
         }
     }
     else if(digitalRead(5)==HIGH){       // taking inputs from pin no. 5
        a=4;
         if(check(a))
         {
-            enque(1);
+            enque(4);
         }
     }
     for(int i=0;i<4;i++)
     {   if (floor[i]!=0)
         {
             myStepper.step(stepsPerRevolution*(current-floor[i]));    // moving the elevator to its desiered floor
-            current=button[i];
+            current=floor[i];
             deque();
         }
     }
