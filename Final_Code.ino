@@ -9,12 +9,11 @@ Stepper myStepper(stepsPerRevolution, 8,10,9,11);
 
 int a;
 int current = 1;
-int floor[4]={0,0,0,0};
+int floor[3]={0,0,0,0};
 int front=-1,rear=-1;
 
 
 void setup() {
-  // set the speed at 96 rpm:
   myStepper.setSpeed(5);
   pinMode(2,INPUT);
   pinMode(3,INPUT);
@@ -26,7 +25,7 @@ void setup() {
 // to add the floor no. in a queue 
 void enque(int item)
 {
-    if (rear==4)
+    if (rear==3)
     {
         rear=-1;
     }
@@ -46,7 +45,7 @@ void enque(int item)
 // to remove the floor already reached
 void deque()
 {
-    if (front==4)
+    if (front==3)
     {
         front=-1;
     }
