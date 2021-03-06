@@ -9,7 +9,7 @@ Stepper myStepper(stepsPerRevolution, 8,10,9,11);
 
 int a;
 int current = 1;
-int floor[3]={0,0,0,0};
+int floor[4]={0,0,0,0};
 int front=-1,rear=-1;
 
 
