@@ -30,6 +30,7 @@ void enque(int item)
         rear=-1;
     }
   
+    rear++;
     floor[rear]=item;
 
     
