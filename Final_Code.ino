@@ -43,7 +43,7 @@ void deque()
     {
         front=-1;
     }
-    floor++;
+    front++;
     floor[front]=0;
 }
 // loop
